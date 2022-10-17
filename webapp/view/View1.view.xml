@@ -1,0 +1,46 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    controllerName="inkit.hsn.fiori.controller.View1" >
+
+<Page title="View 1">
+
+    <content>
+
+    <SearchField search="onSearch" id="idSearch">
+    </SearchField>
+    
+    <List id="idList" items="{/fruits}" selectionChange="onSelect" mode="SingleSelectMaster" delete="onDelete">
+        <items>
+
+            <ObjectListItem 
+            title="{name}" 
+            intro="{type}" 
+            number="{price}"
+            numberUnit="{currency}" 
+            icon="{imageURL}" 
+            > 
+            </ObjectListItem>
+
+    <!-- <DisplayListItem label="{name}" value="{price}"></DisplayListItem> -->
+        
+
+        </items>
+
+    </List>
+
+    </content>
+
+    <headerContent>
+        <Button icon="sap-icon://action" text="Goto Next" press="goto"></Button>
+    </headerContent>
+    <footer>
+    <Toolbar>
+    </Toolbar>
+    </footer>
+
+    <!-- <Button text="Goto Next" press="goto"></Button> -->
+
+</Page>
+
+</mvc:View>

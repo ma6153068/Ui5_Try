@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <!-- reconmended bootstrap for ui5 is -> https://ui5.sap.com/resources/sap-ui-core.js-->
+        <script src="https://ui5.sap.com/resources/sap-ui-core.js"
+                data-sap-ui-libs="sap.m"
+                data-sap-ui-theme="sap_horizon_dark"
+                data-sap-ui-xx-bindingSyntax="complex"
+                data-sap-ui-resourceroots='{
+                    "inkit.hsn.fiori" : "./"
+                }'       
+        >
+        </script>
+    <script>
+        // Index.html just used for testing purpose  fiori app only
+        // the system will search the wepapp directory and search for a special file called Component.js
+        var oCompContainer = new sap.ui.core.ComponentContainer({
+                name:"inkit.hsn.fiori"
+                
+        });
+
+        oCompContainer.placeAt("content");
+    </script>
+
+    </head>
+    <body class="sapUiBody">
+        <div id="content"></div>
+        
+    </body>
+</html>

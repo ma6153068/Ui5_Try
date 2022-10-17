@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"  xmlns="sap.m">
+
+
+
+ <Table items="{/suppliers}" itemPress="onItemPress" id="idTabSupp">
+
+ <headerToolbar>
+    <Toolbar>  
+        <ToolbarSpacer />
+        <Button icon="sap-icon://filter" tooltip="Filter Supplier" press="onFilterSupplier" ></Button>
+    </Toolbar>
+</headerToolbar>
+
+                <columns>
+                    <Column>
+                        <Label text="Name"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="SinceWhen"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="ContactPerson"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="ContactNo"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="City"></Label>
+                    </Column>
+                      <Column>
+                        <Label text="suppFruitsName"></Label>
+                    </Column>
+                    <Column>
+                        <Label text="suppFruitsQnty"></Label>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation">
+                        <Text text="{name}"></Text>
+                        <Text text="{sinceWhen}"></Text>
+                        <Text text="{contactPerson}"></Text>
+                        <Text text="{contactNo}"></Text>
+                        <Input value="{city}" showValueHelp="true" valueHelpRequest="onF4Help"></Input>
+                        <Text text="{suppFruits/0/name}, {suppFruits/1/name}"></Text>
+                        <Text text="{suppFruits/0/quantity}, {suppFruits/1/quantity}"></Text>
+                    </ColumnListItem>
+                </items>
+                
+            </Table>
+
+</core:FragmentDefinition>

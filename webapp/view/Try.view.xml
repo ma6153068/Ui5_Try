@@ -1,0 +1,57 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:viz="sap.viz.ui5.controls" 
+    xmlns:layout="sap.ui.layout"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+    controllerName="inkit.hsn.fiori.controller.Try" >
+
+<Page title="My Supplier View" showNavButton="true" navButtonPress="onBack">
+    <content>
+        <ObjectHeader  title="{name}" 
+        intro="{contactPerson}"
+        number="{contactNo}"
+        numberUnit="{sinceWhen}"
+        icon="sap-icon://supplier"
+        ></ObjectHeader>
+<Select id="idDrop" selectedKey="{chartType}">
+    <core:Item key="line" text="line"></core:Item>
+    <core:Item key="pie" text="pie"></core:Item>
+<core:Item key="column" text="column"></core:Item>
+<core:Item key="bar" text="bar"></core:Item>
+</Select>
+
+
+    <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='75%' width="75%" vizType='{chartType}'>
+                <viz:dataset>
+                    
+                    <viz.data:FlattenedDataset data="{suppFruits}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="Fruit Name"
+                                value="{name}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Quantity"
+                                value="{quantity}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+
+                </viz:dataset>
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="Quantity" />
+                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"
+                        values="Fruit Name" />
+                </viz:feeds>
+            </viz:VizFrame>
+            
+    </content>
+
+
+
+</Page>
+
+</mvc:View>

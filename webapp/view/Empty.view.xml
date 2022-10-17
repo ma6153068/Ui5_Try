@@ -1,0 +1,10 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    controllerName="inkit.hsn.fiori.controller.Empty" >
+
+<Page title="Start of My App" showNavButton="true" navButtonPress="back">
+    <Image src="https://thumbs.gfycat.com/DentalCanineChipmunk-size_restricted.gif" height="100%" width="100%"></Image>
+</Page>
+
+</mvc:View>

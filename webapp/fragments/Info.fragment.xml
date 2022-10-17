@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+
+    <f:SimpleForm editable="true">
+        <f:content>
+                <Label text="Name"></Label>
+                <Input value="{name}"></Input>
+                <Label text="Type"></Label>
+                <Input value="{type}"></Input>
+                <Label text="Status"></Label>
+                <Input value="{status}"></Input>
+                <Label text="Price"></Label>
+                <Input value="{price} {currency}"> </Input>
+        </f:content>
+    </f:SimpleForm>
+
+</core:FragmentDefinition>

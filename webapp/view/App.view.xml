@@ -1,0 +1,12 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    controllerName="inkit.hsn.fiori.controller.App" >
+
+<SplitApp id="idAppCon">
+
+    
+
+</SplitApp>
+
+</mvc:View>

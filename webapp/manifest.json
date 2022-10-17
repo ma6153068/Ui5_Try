@@ -1,0 +1,106 @@
+{
+    "_version": "1.37.0",
+    "sap.app":{
+        "id":"inkit.hsn.fiori", 
+        "type":"application",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+    "ach": "HSN-INT-FIORI",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "i18n": "i18n/i18n.properties"
+    },
+    "sap.ui":{
+        "technology": "UI5",
+        "fullWidth": true,
+        "deviceTypes":{
+         "desktop": true,
+         "tablet": true,
+         "phone": true   
+        },
+        "supportedThemes": ["sap_fiori_3", "sap_fiori_3_dark", "sap_horizon"]
+    },
+    "sap.ui5":{
+        
+        "dependencies": {
+            "minUI5Version": "1.96.0",
+            "libs": {
+                "sap.m":{},
+                "sap.ui.core":{},
+                "sap.viz":{}
+            }
+            
+        },
+        "resources": {
+            "css": [{
+                "uri": "css/style.css"
+            }]
+        },
+        "contentDensities": {"compact": true, "cozy": true},
+        "models": {
+            "":{
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/mockdata/fruits.json",
+                "preload": true
+            },
+            "i18n":{
+                "type": "sap.ui.model.resource.ResourceModel",
+                "preload": true,
+                "settings": {
+                    "bundleUrl": "i18n/i18n.properties"
+                }
+            }
+        },
+        "rootView":{
+            "viewName": "inkit.hsn.fiori.view.App",
+            "id": "idRoot",
+            "type": "XML"
+        },
+        "routing": {
+            "config":{
+                "routerClass": "sap.m.routing.Router",
+                "viewPath": "inkit.hsn.fiori.view",
+                "viewType": "XML",
+                "controlId": "idAppCon"
+            },
+            "routes":[{
+                "name": "spiderman",
+                "pattern": "",
+                "target":["joe", "biden"]
+            },
+            {
+                "name": "hell",
+                "pattern": "fruits/{idfruit}",
+                "target": ["joe", "putin"]
+            },
+            {
+                "name": "well",
+                "pattern": "suppliers/{supplierId}",
+                "target":["joe", "tryit"]
+            }],
+            "targets": {
+                "joe":{
+                    "viewName": "View1",
+                    "viewId": "idV1",
+                    "controlAggregation": "masterPages"
+                },
+                "biden":{
+                    "viewName": "Empty",
+                    "viewId":"idEmpty",
+                    "controlAggregation": "detailPages"
+                },
+                "putin":{
+                    "viewName": "View2",
+                    "viewId": "idV2",
+                    "controlAggregation": "detailPages"
+                },
+                "tryit":{
+                    "viewName": "Try",
+                    "viewId": "idTry",
+                    "controlAggregation": "detailPages"
+                }
+            }
+        }
+    }
+}
